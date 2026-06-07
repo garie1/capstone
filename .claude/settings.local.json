@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(ls -la \"/Users/garie/Desktop/Working Files/Capstone Technologies/Online\")",
+      "Read(//tmp/**)",
+      "Bash(python3 -)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4599/index.html)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4599/styles.css)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4599/hero.png)",
+      "Bash(perl -0pi -e 's/<i>&bull;<\\\\/i>/<i>&#9642;<\\\\/i>/g' index.html)",
+      "Bash(perl -0pi -e 's/dotfield dotfield--silver dotfield--fade-radial pagehero__dots/dotfield dotfield--fade-radial pagehero__dots/g' services.html about.html contact.html)",
+      "Bash(perl -0pi -e 's{<img src=\"capstone_logo_2.png\" alt=\"Capstone Technologies\" class=\"footer__logo\" />}{<img src=\"capstone_logo_1.png\" alt=\"Capstone Technologies\" class=\"footer__logo\" />}g' index.html services.html about.html contact.html)",
+      "Bash(perl -0pi -e 's/linear-gradient\\\\\\(180deg, var\\\\\\(--sky\\\\\\) 0%, var\\\\\\(--white\\\\\\) 75%\\\\\\)/var\\(--grad-mist\\)/g; s/linear-gradient\\\\\\(180deg, var\\\\\\(--sky\\\\\\), var\\\\\\(--white\\\\\\)\\\\\\)/var\\(--grad-mist\\)/g; s/linear-gradient\\\\\\(105deg, var\\\\\\(--sky\\\\\\) 0%, var\\\\\\(--white\\\\\\) 70%\\\\\\)/var\\(--grad-mist\\)/g; s/linear-gradient\\\\\\(105deg, var\\\\\\(--sky\\\\\\), var\\\\\\(--white\\\\\\)\\\\\\)/var\\(--grad-mist\\)/g;' styles.css)",
+      "Bash(perl -0pi -e 's/rgba\\\\\\(45,91,255,\\\\.12\\\\\\)/var\\(--tint-blue-weak\\)/g; s/rgba\\\\\\(45,91,255,\\\\.28\\\\\\)/var\\(--tint-blue-soft\\)/g; s/rgba\\\\\\(45,91,255,\\\\.5\\\\\\)/var\\(--tint-blue-dots\\)/g; s/rgba\\\\\\(157,180,255,\\\\.22\\\\\\)/var\\(--tint-dust-soft\\)/g; s/rgba\\\\\\(157,180,255,\\\\.16\\\\\\)/var\\(--tint-dust-faint\\)/g' styles.css)",
+      "Bash(perl -0pi -e ' *)",
+      "Bash(perl -0pi -e \"s{\\(<section class=\\\\\"pagehero pagehero--img\\\\\" style=\\\\\"--hero-img:url\\\\\\('\\)hero\\\\.jpg\\('\\\\\\)\\\\\">\\)}{\\\\${1}insights_3.jpg\\\\${2}}g\" insights.html)",
+      "Bash(git rev-parse *)",
+      "Bash(git remote *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git -c user.email=\"hello@capstonetech.net\" -c user.name=\"Capstone\" commit -q -m \"Capstone site: multi-page, dark inner-page heroes, insights cards, services rework\")",
+      "Bash(git branch *)"
+    ]
+  }
+}
