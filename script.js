@@ -9,16 +9,6 @@
   const $  = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
 
-  /* ---------- Intro overlay (home only) ---------- */
-  const intro = $('#intro');
-  if (intro) {
-    if (reduce) { intro.classList.add('is-done'); }
-    else {
-      window.addEventListener('load', () => setTimeout(() => intro.classList.add('is-done'), 1500));
-      setTimeout(() => intro.classList.add('is-done'), 2600);
-    }
-  }
-
   /* ---------- Nav: stick, hide-on-scroll, over-hero swap ---------- */
   const nav = $('#nav');
   const overHero = nav && nav.classList.contains('nav--over-hero');

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Insights — Capstone Technologies</title>
-  <meta name="description" content="Notes from the field — case studies, engineering write-ups, and company news from Capstone Technologies." />
+  <title>Modernising a 12-year-old system without an outage — Capstone Technologies</title>
+  <meta name="description" content="Case study: modernising a 12-year-old system without a single outage." />
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
   <link href="https://api.fontshare.com/v2/css?f[]=general-sans@200,300,400,500,600,700&f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
@@ -41,53 +41,89 @@
 
   <main>
     <!-- Page hero -->
-    <section class="pagehero pagehero--img" style="--hero-img:url('insights_3.jpg')">
+    <section class="pagehero pagehero--img pagehero--feature" style="--hero-img:url('insights_4.jpg')">
       <div class="grid-lines" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
       <div class="dotfield dotfield--fade-radial pagehero__dots" data-reveal aria-hidden="true"></div>
       <div class="wrap pagehero__inner">
-        <p class="crumbs reveal" data-reveal><a href="index.html">Home</a> &nbsp;/&nbsp; <span>Insights</span></p>
-        <h1 class="pagehero__title reveal" data-reveal>Notes from <em>the field.</em></h1>
+        <p class="crumbs reveal" data-reveal><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="insights.html">Insights</a> &nbsp;/&nbsp; <span>Case Study</span></p>
+        <p class="cs__cat reveal" data-reveal data-reveal-delay="60">Case Study &middot; Modernisation</p>
+        <h1 class="pagehero__title reveal" data-reveal>Twelve years old, <em>not a single outage.</em></h1>
         <p class="pagehero__lead reveal" data-reveal data-reveal-delay="120">
-          Case studies, engineering write-ups, and the occasional bit of company news &mdash;
-          written by the people doing the work.
+          Replacing the engine of a business-critical system while it kept running &mdash;
+          no downtime, no lost data. <em>(Sample content &mdash; real case studies coming soon.)</em>
         </p>
       </div>
     </section>
 
-    <!-- All insights -->
+    <!-- Outcome stats -->
+    <section class="section" style="padding-bottom:0;">
+      <div class="stats__grid">
+        <div class="stat reveal" data-reveal><span class="stat__num" data-count="0" data-suffix="">0</span><span class="stat__label">Outages during migration</span></div>
+        <div class="stat reveal" data-reveal data-reveal-delay="80"><span class="stat__num" data-count="12" data-suffix=" yrs">0</span><span class="stat__label">Of legacy, modernised</span></div>
+        <div class="stat reveal" data-reveal data-reveal-delay="160"><span class="stat__num" data-count="100" data-suffix="%">0</span><span class="stat__label">Data integrity preserved</span></div>
+        <div class="stat reveal" data-reveal data-reveal-delay="240"><span class="stat__num" data-count="6" data-suffix=" mo">0</span><span class="stat__label">Phased, low-risk rollout</span></div>
+      </div>
+    </section>
+
+    <!-- Body: meta sidebar + article -->
     <section class="section">
+      <div class="cs__grid">
+        <aside class="cs__meta reveal" data-reveal>
+          <div class="cs__meta-row"><span class="cs__k">Client</span><span class="cs__v">Confidential (finance)</span></div>
+          <div class="cs__meta-row"><span class="cs__k">Industry</span><span class="cs__v">Financial services</span></div>
+          <div class="cs__meta-row"><span class="cs__k">Engagement</span><span class="cs__v">Legacy modernisation</span></div>
+          <div class="cs__meta-row"><span class="cs__k">Timeline</span><span class="cs__v">6 months, phased</span></div>
+          <div class="cs__meta-row"><span class="cs__k">Status</span><span class="cs__v">Live, maintained by us</span></div>
+        </aside>
+
+        <article class="cs__article reveal" data-reveal data-reveal-delay="100">
+          <h2 class="cs__h">The problem</h2>
+          <p>A core system had run the business for twelve years &mdash; and become too risky
+            to touch. The original team had moved on, documentation was thin, and a single
+            bad deploy could halt operations. But it couldn&rsquo;t be switched off either.</p>
+
+          <h2 class="cs__h">What we did</h2>
+          <p>We modernised it the safe way: strangler-fig style, replacing one capability at
+            a time behind a stable interface, with the old and new running side by side until
+            each piece was proven. Nothing went live until it had been shadow-tested against
+            real traffic.</p>
+          <ul class="cs__list">
+            <li>Mapped and documented the legacy behaviour first</li>
+            <li>Replaced capabilities incrementally behind a façade</li>
+            <li>Ran old and new in parallel, comparing outputs</li>
+            <li>Cut over piece by piece, reversible at every step</li>
+          </ul>
+
+          <blockquote class="cs__quote">
+            &ldquo;Our customers never knew anything changed. That was exactly the point.&rdquo;
+            <cite>&mdash; CTO <span>(sample quote)</span></cite>
+          </blockquote>
+
+          <h2 class="cs__h">The result</h2>
+          <p>The business now runs on a modern, maintainable system &mdash; migrated with zero
+            outages and full data integrity. And because we built it, we keep it healthy.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- More insights -->
+    <section class="section" style="padding-top:0;">
+      <div class="services__head">
+        <p class="section-tag reveal" data-reveal><span>&mdash;</span> More insights</p>
+        <h2 class="section-title reveal" data-reveal>Keep reading.</h2>
+      </div>
       <div class="card-grid">
         <a class="card card--img reveal" data-reveal href="article-1.html" style="--img:url('insights_1.jpg')">
           <div class="card__top"><span class="card__date-k">Date:</span><span class="card__date-v">09 / 04 / 26</span></div>
           <p class="card__cat">Case Study</p>
           <h3 class="card__title">How we cut a logistics platform&rsquo;s downtime to near zero</h3>
-          <span class="card__notch" aria-hidden="true">
-            <svg class="card__notch-arrow" viewBox="0 0 28 28" width="28" height="28"><g fill="currentColor"><circle cx="11" cy="9" r="1.4"/><circle cx="15" cy="11.5" r="1.4"/><circle cx="18" cy="14" r="1.4"/><circle cx="15" cy="16.5" r="1.4"/><circle cx="11" cy="19" r="1.4"/></g></svg>
-          </span>
+          <span class="card__notch" aria-hidden="true"><svg class="card__notch-arrow" viewBox="0 0 28 28" width="28" height="28"><g fill="currentColor"><circle cx="11" cy="9" r="1.4"/><circle cx="15" cy="11.5" r="1.4"/><circle cx="18" cy="14" r="1.4"/><circle cx="15" cy="16.5" r="1.4"/><circle cx="11" cy="19" r="1.4"/></g></svg></span>
         </a>
         <a class="card card--img-light reveal" data-reveal data-reveal-delay="80" href="article-2.html" style="--img:url('insights_2.jpg')">
           <div class="card__top"><span class="card__date-k">Date:</span><span class="card__date-v">09 / 04 / 26</span></div>
           <p class="card__cat">Company News</p>
           <h3 class="card__title">Capstone opens a second delivery pod in Singapore</h3>
-          <span class="card__notch" aria-hidden="true">
-            <svg class="card__notch-arrow" viewBox="0 0 28 28" width="28" height="28"><g fill="currentColor"><circle cx="11" cy="9" r="1.4"/><circle cx="15" cy="11.5" r="1.4"/><circle cx="18" cy="14" r="1.4"/><circle cx="15" cy="16.5" r="1.4"/><circle cx="11" cy="19" r="1.4"/></g></svg>
-          </span>
-        </a>
-        <a class="card card--img reveal" data-reveal href="article-3.html" style="--img:url('insights_3.jpg')">
-          <div class="card__top"><span class="card__date-k">Date:</span><span class="card__date-v">08 / 19 / 26</span></div>
-          <p class="card__cat">Engineering</p>
-          <h3 class="card__title">Designing data pipelines that stay calm under load</h3>
-          <span class="card__notch" aria-hidden="true">
-            <svg class="card__notch-arrow" viewBox="0 0 28 28" width="28" height="28"><g fill="currentColor"><circle cx="11" cy="9" r="1.4"/><circle cx="15" cy="11.5" r="1.4"/><circle cx="18" cy="14" r="1.4"/><circle cx="15" cy="16.5" r="1.4"/><circle cx="11" cy="19" r="1.4"/></g></svg>
-          </span>
-        </a>
-        <a class="card card--img reveal" data-reveal data-reveal-delay="80" href="article-4.html" style="--img:url('insights_4.jpg')">
-          <div class="card__top"><span class="card__date-k">Date:</span><span class="card__date-v">07 / 30 / 26</span></div>
-          <p class="card__cat">Case Study</p>
-          <h3 class="card__title">Modernising a 12-year-old system without a single outage</h3>
-          <span class="card__notch" aria-hidden="true">
-            <svg class="card__notch-arrow" viewBox="0 0 28 28" width="28" height="28"><g fill="currentColor"><circle cx="11" cy="9" r="1.4"/><circle cx="15" cy="11.5" r="1.4"/><circle cx="18" cy="14" r="1.4"/><circle cx="15" cy="16.5" r="1.4"/><circle cx="11" cy="19" r="1.4"/></g></svg>
-          </span>
+          <span class="card__notch" aria-hidden="true"><svg class="card__notch-arrow" viewBox="0 0 28 28" width="28" height="28"><g fill="currentColor"><circle cx="11" cy="9" r="1.4"/><circle cx="15" cy="11.5" r="1.4"/><circle cx="18" cy="14" r="1.4"/><circle cx="15" cy="16.5" r="1.4"/><circle cx="11" cy="19" r="1.4"/></g></svg></span>
         </a>
       </div>
     </section>
@@ -96,11 +132,11 @@
     <section class="cta">
       <div class="grid-lines" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
       <div class="cta__inner">
-        <h2 class="cta__title reveal" data-reveal>Let&rsquo;s talk about<br />what you&rsquo;re building.</h2>
+        <h2 class="cta__title reveal" data-reveal>Stuck with a system<br />you can&rsquo;t touch?</h2>
         <p class="cta__lead reveal" data-reveal data-reveal-delay="100">Tell us the problem. We&rsquo;ll tell you, honestly, whether and how we can help.</p>
         <div class="cta__actions reveal" data-reveal data-reveal-delay="180">
           <a href="contact.html" class="btn btn--orbit magnetic" aria-label="Start a project"><span class="cta-orbit__label">Start a project</span><span class="cta-orbit__icon" aria-hidden="true"><span class="cta-orbit__ring"></span><svg class="cta-orbit__arrow" viewBox="0 0 28 28" width="28" height="28"><g fill="currentColor"><circle cx="11" cy="9" r="1.4"/><circle cx="15" cy="11.5" r="1.4"/><circle cx="18" cy="14" r="1.4"/><circle cx="15" cy="16.5" r="1.4"/><circle cx="11" cy="19" r="1.4"/></g></svg></span></a>
-          <a href="tel:+85225483202" class="link-cta">or call +852 2548 3202</a>
+          <a href="services.html" class="link-cta">See our services <span class="btn__arrow">&rarr;</span></a>
         </div>
       </div>
     </section>
