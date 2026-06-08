@@ -11,7 +11,7 @@
 </head>
 <body data-page="insights">
 
-  <header class="nav nav--over-hero" id="nav">
+  <header class="nav" id="nav">
     <div class="nav__inner">
       <a href="index.html" class="nav__brand" aria-label="Capstone Technologies home">
         <img src="capstone_logo_2.png" alt="Capstone Technologies" class="nav__logo nav__logo--light" />
@@ -40,12 +40,10 @@
   </header>
 
   <main>
-    <!-- Page hero -->
-    <section class="pagehero pagehero--img" style="--hero-img:url('insights_3.jpg')">
+    <!-- Page hero (compact, no image) -->
+    <section class="pagehero pagehero--compact">
       <div class="grid-lines" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-      <div class="dotfield dotfield--fade-radial pagehero__dots" data-reveal aria-hidden="true"></div>
       <div class="wrap pagehero__inner">
-        <p class="crumbs reveal" data-reveal><a href="index.html">Home</a> &nbsp;/&nbsp; <span>Insights</span></p>
         <h1 class="pagehero__title reveal" data-reveal>Notes from <em>the field.</em></h1>
         <p class="pagehero__lead reveal" data-reveal data-reveal-delay="120">
           Case studies, engineering write-ups, and the occasional bit of company news &mdash;
@@ -93,8 +91,8 @@
     </section>
 
     <!-- CTA -->
-    <section class="cta">
-      <div class="grid-lines" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <section class="cta" style="--cta-img:url('action.jpg')">
+      <div class="cta__media" aria-hidden="true"></div>
       <div class="cta__inner">
         <h2 class="cta__title reveal" data-reveal>Let&rsquo;s talk about<br />what you&rsquo;re building.</h2>
         <p class="cta__lead reveal" data-reveal data-reveal-delay="100">Tell us the problem. We&rsquo;ll tell you, honestly, whether and how we can help.</p>

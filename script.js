@@ -202,12 +202,15 @@
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
       const btn = form.querySelector('button[type="submit"]');
-      btn.innerHTML = 'Sending&hellip;';
+      // update only the label so orbit/comet button structure is preserved
+      const lbl = btn.querySelector('.cta-orbit__label') || btn;
+      const original = lbl.innerHTML;
+      lbl.textContent = 'Sending…';
       setTimeout(() => {
         form.reset();
-        btn.innerHTML = 'Message sent &check;';
-        if (note) { note.textContent = 'Thank you — we’ll be in touch within one business day.'; note.style.color = 'var(--blue)'; }
-        setTimeout(() => { btn.innerHTML = 'Send message <span class="btn__arrow">&rarr;</span>'; }, 4000);
+        lbl.textContent = 'Message sent ✓';
+        if (note) { note.textContent = 'Thank you — we’ll be in touch within one business day.'; note.style.color = '#9DB4FF'; }
+        setTimeout(() => { lbl.innerHTML = original; }, 4000);
       }, 900);
     });
   }
