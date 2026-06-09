@@ -230,8 +230,9 @@ em{ font-style:normal; color:var(--blue); }
 .nav__burger[aria-expanded="true"] span:last-child{ transform:translateY(-8px) rotate(-45deg); }
 /* ✦ Full-screen overlay mobile menu (dark, staggered links) */
 .nav__mobile{ position:fixed; inset:0; z-index:90; display:none; flex-direction:column;
-  justify-content:center; gap:clamp(2rem,6vh,4rem);
-  padding:calc(var(--nav-h) + 1.5rem) var(--pad) clamp(2rem,5vh,3rem);
+  justify-content:center; gap:clamp(1.6rem,5vh,3rem);
+  padding:calc(var(--nav-h) + 1.25rem) var(--pad) clamp(1.5rem,4vh,2.5rem);
+  overflow-y:auto; -webkit-overflow-scrolling:touch;   /* scroll if content exceeds height */
   color:#fff;
   /* frosted dark gradient — slightly transparent so the page ghosts through */
   background:
@@ -241,6 +242,11 @@ em{ font-style:normal; color:var(--blue); }
   opacity:0; visibility:hidden; transform:translateY(-8px);
   transition:opacity .5s var(--ease), transform .6s var(--ease), visibility 0s .5s; }
 .nav__mobile.is-open{ opacity:1; visibility:visible; transform:none; transition:opacity .5s var(--ease), transform .6s var(--ease); }
+/* on short screens, top-align + tighten so nothing crops (content scrolls if needed) */
+@media (max-height:680px){
+  .nav__mobile{ justify-content:flex-start; gap:1.2rem; }
+  .nav__mobile-links a{ font-size:clamp(1.4rem,6vw,1.9rem); padding:.3rem 0; }
+}
 .nav__mobile-links{ display:flex; flex-direction:column; }
 .nav__mobile-links a{ display:flex; align-items:baseline; gap:1rem;
   font-family:var(--display); font-weight:300; letter-spacing:-0.02em;
@@ -265,8 +271,9 @@ em{ font-style:normal; color:var(--blue); }
 .nav__mobile-contact{ display:flex; flex-direction:column; gap:.5rem; font-size:.95rem; }
 .nav__mobile-contact a{ color:rgba(255,255,255,.72); transition:color .3s var(--ease); }
 .nav__mobile-contact a:hover{ color:#fff; }
-/* burger turns white while the overlay is open, regardless of page */
-.nav:has(.nav__mobile.is-open) .nav__burger span{ background:#fff; }
+/* burger turns into a white X while the overlay is open (works on every page) */
+.nav__burger[aria-expanded="true"]{ position:relative; z-index:95; }
+.nav__burger[aria-expanded="true"] span{ background:#fff !important; }
 
 /* =====================================================================
    Grid lines (depth)
