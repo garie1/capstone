@@ -228,10 +228,45 @@ em{ font-style:normal; color:var(--blue); }
 .nav--over-hero:not(.is-stuck) .nav__burger span{ background:#fff; }
 .nav__burger[aria-expanded="true"] span:first-child{ transform:translateY(8px) rotate(45deg); }
 .nav__burger[aria-expanded="true"] span:last-child{ transform:translateY(-8px) rotate(-45deg); }
-.nav__mobile{ display:none; flex-direction:column; gap:.4rem; padding:0 var(--pad) 1.5rem;
-  background:rgba(255,255,255,.96); -webkit-backdrop-filter:blur(16px); backdrop-filter:blur(16px); }
-.nav__mobile a{ padding:.85rem 0; border-bottom:1px solid var(--line); font-weight:500; font-size:1.1rem; color:var(--ink); }
-.nav__mobile .btn{ margin-top:.8rem; justify-content:center; }
+/* ✦ Full-screen overlay mobile menu (dark, staggered links) */
+.nav__mobile{ position:fixed; inset:0; z-index:90; display:none; flex-direction:column;
+  justify-content:center; gap:clamp(2rem,6vh,4rem);
+  padding:calc(var(--nav-h) + 1.5rem) var(--pad) clamp(2rem,5vh,3rem);
+  color:#fff;
+  /* frosted dark gradient — slightly transparent so the page ghosts through */
+  background:
+    radial-gradient(120% 80% at 100% 0%, rgba(45,91,255,.18), transparent 60%),
+    linear-gradient(160deg, rgba(14,26,60,.94) 0%, rgba(11,21,48,.95) 55%, rgba(7,13,31,.96) 100%);
+  -webkit-backdrop-filter:blur(18px) saturate(140%); backdrop-filter:blur(18px) saturate(140%);
+  opacity:0; visibility:hidden; transform:translateY(-8px);
+  transition:opacity .5s var(--ease), transform .6s var(--ease), visibility 0s .5s; }
+.nav__mobile.is-open{ opacity:1; visibility:visible; transform:none; transition:opacity .5s var(--ease), transform .6s var(--ease); }
+.nav__mobile-links{ display:flex; flex-direction:column; }
+.nav__mobile-links a{ display:flex; align-items:baseline; gap:1rem;
+  font-family:var(--display); font-weight:300; letter-spacing:-0.02em;
+  font-size:clamp(1.8rem,8vw,2.6rem); color:#fff; padding:.45rem 0;
+  border-bottom:1px solid rgba(255,255,255,.1);
+  opacity:0; transform:translateY(14px); }
+.nav__mobile-links a:last-child{ border-bottom:0; }
+.nav__mobile.is-open .nav__mobile-links a{ animation:navItemIn .6s var(--ease) forwards; }
+.nav__mobile.is-open .nav__mobile-links a:nth-child(1){ animation-delay:.10s; }
+.nav__mobile.is-open .nav__mobile-links a:nth-child(2){ animation-delay:.16s; }
+.nav__mobile.is-open .nav__mobile-links a:nth-child(3){ animation-delay:.22s; }
+.nav__mobile.is-open .nav__mobile-links a:nth-child(4){ animation-delay:.28s; }
+.nav__mobile.is-open .nav__mobile-links a:nth-child(5){ animation-delay:.34s; }
+.nav__mobile.is-open .nav__mobile-links a:nth-child(6){ animation-delay:.40s; }
+.nav__mobile.is-open .nav__mobile-links a:nth-child(7){ animation-delay:.46s; }
+@keyframes navItemIn{ to{ opacity:1; transform:none; } }
+.nav__mobile-no{ font-size:.8rem; font-weight:500; color:#9DB4FF; font-variant-numeric:tabular-nums; }
+.nav__mobile-links a[aria-current="page"]{ color:#9DB4FF; }
+.nav__mobile-foot{ display:flex; flex-direction:column; gap:1.4rem; align-items:flex-start;
+  opacity:0; transform:translateY(14px); }
+.nav__mobile.is-open .nav__mobile-foot{ animation:navItemIn .6s var(--ease) .54s forwards; }
+.nav__mobile-contact{ display:flex; flex-direction:column; gap:.5rem; font-size:.95rem; }
+.nav__mobile-contact a{ color:rgba(255,255,255,.72); transition:color .3s var(--ease); }
+.nav__mobile-contact a:hover{ color:#fff; }
+/* burger turns white while the overlay is open, regardless of page */
+.nav:has(.nav__mobile.is-open) .nav__burger span{ background:#fff; }
 
 /* =====================================================================
    Grid lines (depth)
@@ -914,7 +949,7 @@ a.footer__item:hover .footer__ico{ color:var(--blue); }
   .nav__links{ display:none; }
   .nav .btn--small{ display:none; }
   .nav__burger{ display:flex; }
-  .nav__mobile.is-open{ display:flex; }
+  .nav__mobile{ display:flex; }   /* present but hidden via opacity/visibility until .is-open */
   .grid-lines{ grid-template-columns:repeat(2,1fr); }
   .stats__grid{ grid-template-columns:1fr; gap:1.8rem; }
   .stat{ padding-right:0; }
@@ -941,4 +976,6 @@ a.footer__item:hover .footer__ico{ color:var(--blue); }
   .hero__title .line > span,.hero__lead,.hero__actions,.hero__meta{ transform:none; opacity:1; }
   .hero__bg img{ animation:none; transform:none; }
   .chart__area{ opacity:1; } .chart__dots circle{ opacity:1; transform:none; }
+  .nav__mobile.is-open .nav__mobile-links a,
+  .nav__mobile.is-open .nav__mobile-foot{ opacity:1; transform:none; }
 }

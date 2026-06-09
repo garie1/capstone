@@ -25,14 +25,20 @@
   /* ---------- Mobile menu ---------- */
   const burger = $('#burger');
   const navMobile = $('#navMobile');
-  if (burger) {
+  if (burger && navMobile) {
     const toggle = (open) => {
       const isOpen = open ?? !navMobile.classList.contains('is-open');
       navMobile.classList.toggle('is-open', isOpen);
       burger.setAttribute('aria-expanded', String(isOpen));
+      burger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+      navMobile.setAttribute('aria-hidden', String(!isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';   // scroll lock
     };
     burger.addEventListener('click', () => toggle());
     $$('#navMobile a').forEach((a) => a.addEventListener('click', () => toggle(false)));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMobile.classList.contains('is-open')) toggle(false);
+    });
   }
 
   /* ---------- Scroll reveals ---------- */
