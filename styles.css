@@ -825,12 +825,22 @@ a.split__row:hover{ color:#fff; }
    CTA — compact split screen (image left + content right), shorter than contact
    ===================================================================== */
 .cta{ display:grid; grid-template-columns:1fr 1fr; align-items:stretch; }
-/* left: image panel */
-.cta__media{ position:relative; overflow:hidden; min-height:clamp(220px,28vw,340px); }
-.cta__media::before{ content:""; position:absolute; inset:0;
+/* left: image panel with overlaid eyebrow (top) + contact details (bottom) */
+.cta__media{ position:relative; overflow:hidden; min-height:clamp(300px,32vw,400px);
+  display:flex; flex-direction:column; justify-content:space-between; color:#fff;
+  padding:clamp(1.8rem,3vw,2.6rem); }
+.cta__media::before{ content:""; position:absolute; inset:0; z-index:0;
   background:
-    linear-gradient(180deg, rgba(7,13,31,.45) 0%, rgba(7,13,31,.2) 50%, rgba(7,13,31,.5) 100%),
+    linear-gradient(180deg, rgba(7,13,31,.5) 0%, rgba(7,13,31,.2) 45%, rgba(7,13,31,.55) 78%, rgba(7,13,31,.8) 100%),
     var(--cta-img) center / cover no-repeat; }
+.cta__media-eyebrow{ position:relative; z-index:1; font-size:.74rem; font-weight:600;
+  letter-spacing:.16em; text-transform:uppercase; color:rgba(255,255,255,.85); }
+/* contact details overlaid at the bottom of the image */
+.cta__contact{ position:relative; z-index:1; display:flex; flex-direction:column; gap:.85rem; }
+.cta__c-item{ display:flex; align-items:center; gap:.7rem; font-size:.92rem; color:rgba(255,255,255,.88);
+  transition:color .3s var(--ease); }
+a.cta__c-item:hover{ color:#fff; }
+.cta__c-item svg{ width:18px; height:18px; flex:none; color:#9DB4FF; }
 /* right: content panel */
 .cta__inner{ background:var(--grad-mist); color:var(--ink);
   padding:clamp(2.5rem,5vw,4rem) clamp(1.8rem,5vw,4.5rem);
@@ -838,17 +848,9 @@ a.split__row:hover{ color:#fff; }
 .cta__title{ font-family:var(--display); font-weight:300; font-size:clamp(1.8rem,3.4vw,2.8rem); line-height:1.06; letter-spacing:-0.025em; }
 .cta__lead{ color:var(--ink-soft); font-size:1.02rem; line-height:1.55; margin:1rem 0 1.8rem; max-width:34rem; }
 .cta__actions{ display:flex; gap:1.4rem; flex-wrap:wrap; align-items:center; }
-/* contact details merged into the CTA panel */
-.cta__contact{ margin-top:2rem; padding-top:1.6rem; border-top:1px solid var(--line);
-  display:flex; flex-wrap:wrap; gap:.8rem 2rem; }
-.cta__c-item{ display:flex; align-items:center; gap:.6rem; font-size:.9rem; color:var(--ink-soft);
-  transition:color .3s var(--ease); }
-a.cta__c-item:hover{ color:var(--ink); }
-.cta__c-item svg{ width:18px; height:18px; flex:none; color:var(--silver-deep); transition:color .3s var(--ease); }
-a.cta__c-item:hover svg{ color:var(--blue); }
 @media (max-width:760px){
   .cta{ grid-template-columns:1fr; }
-  .cta__media{ min-height:200px; }
+  .cta__media{ min-height:280px; }
 }
 
 /* =====================================================================
