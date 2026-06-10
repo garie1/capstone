@@ -452,19 +452,21 @@ em{ font-style:normal; color:var(--blue); }
 .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
   clip:rect(0 0 0 0); white-space:nowrap; border:0; }
 
-.xp{ max-width:var(--maxw); margin:0 auto;
-  padding:calc(var(--nav-h) + 1.25rem) var(--pad) clamp(1rem,2vw,1.5rem); }
-.xp__panel{ position:relative; overflow:hidden; border-radius:24px; color:#fff;
-  min-height:min(80vh,740px); display:flex; flex-direction:column;
-  padding:clamp(1.5rem,3vw,2.5rem); }
+/* full-bleed, like the home hero — panel spans edge to edge */
+.xp{ position:relative; }
+.xp__panel{ position:relative; overflow:hidden; color:#fff;
+  min-height:100svh; display:flex; flex-direction:column;
+  padding:calc(var(--nav-h) + 2rem) var(--pad) clamp(2rem,4vw,3.5rem); }
 .xp__panel::before{ content:""; position:absolute; inset:0; z-index:0;
   background:
     linear-gradient(180deg, rgba(7,13,31,.55) 0%, rgba(7,13,31,.35) 35%, rgba(7,13,31,.72) 100%),
     var(--xp-img) center / cover no-repeat; }
+/* keep the inner content aligned to the site's content width */
+.xp__body, .xp__foot{ width:100%; max-width:var(--maxw); margin-inline:auto; }
 
-/* pill tab switcher (reference style) */
-.xp__tabs{ position:relative; z-index:1; align-self:center; display:inline-flex; gap:.3rem;
-  padding:.3rem; border-radius:50px;
+/* pill tab switcher (reference style) — centered within the full-bleed panel */
+.xp__tabs{ position:relative; z-index:1; width:fit-content; margin-inline:auto;
+  display:inline-flex; gap:.3rem; padding:.3rem; border-radius:50px;
   background:rgba(7,13,31,.4); border:1px solid rgba(255,255,255,.14);
   -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px); }
 .xp__tab{ border:0; background:transparent; cursor:pointer;
@@ -485,9 +487,9 @@ em{ font-style:normal; color:var(--blue); }
 .xp__title em{ color:rgba(214,221,232,.75); }
 .xp__lead{ color:rgba(255,255,255,.82); font-size:1.02rem; line-height:1.6; max-width:38rem; margin-top:1.1rem; }
 .xp__list{ margin-top:1.6rem; display:grid; grid-template-columns:1fr 1fr; gap:.6rem 2rem; }
-.xp__list li{ position:relative; padding-left:1.3rem; font-size:.95rem; color:rgba(255,255,255,.88); }
-.xp__list li::before{ content:""; position:absolute; left:0; top:.5em; width:7px; height:7px;
-  border-radius:1.5px; background:var(--chrome); transform:rotate(45deg); }
+.xp__list li{ position:relative; padding-left:1.5rem; font-size:.95rem; color:rgba(255,255,255,.88); }
+.xp__list li::before{ content:""; position:absolute; left:0; top:.66em; width:12px; height:2px; border-radius:2px;
+  background:linear-gradient(90deg, var(--silver-bright), #9DB4FF); }
 .xp__foot{ position:relative; z-index:1; font-size:.78rem; letter-spacing:.1em; text-transform:uppercase;
   color:rgba(255,255,255,.55); }
 
@@ -626,8 +628,9 @@ em{ font-style:normal; color:var(--blue); }
 .svc-detail__lead{ font-size:1.15rem; color:var(--ink); margin-bottom:1.6rem; }
 .svc-detail p{ color:var(--ink-soft); margin-bottom:1.6rem; max-width:46rem; }
 .svc-list{ display:grid; grid-template-columns:1fr 1fr; gap:.7rem 1.5rem; }
-.svc-list li{ position:relative; padding-left:1.4rem; color:var(--ink); }
-.svc-list li::before{ content:""; position:absolute; left:0; top:.62em; width:8px; height:8px; border-radius:1.5px; background:var(--chrome); transform:rotate(45deg); box-shadow:inset 0 1px 1px rgba(255,255,255,.6); }
+.svc-list li{ position:relative; padding-left:1.5rem; color:var(--ink); }
+.svc-list li::before{ content:""; position:absolute; left:0; top:.66em; width:12px; height:2px; border-radius:2px;
+  background:linear-gradient(90deg, var(--silver-deep), var(--blue)); }
 
 /* =====================================================================
    Approach (dark)
@@ -908,9 +911,9 @@ a.split__row:hover{ color:#fff; }
 .cs__article > .cs__h:first-child{ margin-top:0; }
 .cs__article p{ color:var(--ink-soft); line-height:1.7; margin-bottom:1rem; }
 .cs__list{ display:flex; flex-direction:column; gap:.7rem; margin:.4rem 0 1.6rem; }
-.cs__list li{ position:relative; padding-left:1.4rem; color:var(--ink); }
-.cs__list li::before{ content:""; position:absolute; left:0; top:.6em; width:7px; height:7px; border-radius:1.5px;
-  background:var(--chrome); transform:rotate(45deg); box-shadow:inset 0 1px 1px rgba(255,255,255,.6); }
+.cs__list li{ position:relative; padding-left:1.5rem; color:var(--ink); }
+.cs__list li::before{ content:""; position:absolute; left:0; top:.66em; width:12px; height:2px; border-radius:2px;
+  background:linear-gradient(90deg, var(--silver-deep), var(--blue)); }
 .cs__quote{ margin:2rem 0; padding:1.6rem 1.8rem; border-left:2px solid var(--blue);
   background:var(--grad-mist); border-radius:0 var(--radius) var(--radius) 0;
   font-family:var(--display); font-weight:300; font-size:clamp(1.2rem,2.2vw,1.6rem); line-height:1.35; color:var(--ink); }
@@ -980,16 +983,16 @@ a.footer__item:hover .footer__ico{ color:var(--blue); }
 /* Custom cursor: a small solid chrome square by default;
    on interactive targets it opens into a hollow silver ring that frames
    (not covers) the element. */
-.cursor-dot{ position:fixed; top:0; left:0; width:9px; height:9px; border-radius:2px;
-  background:var(--chrome); border:1px solid transparent;
-  box-shadow:inset 0 1px 1px rgba(255,255,255,.7), 0 0 6px rgba(154,166,184,.5);
+.cursor-dot{ position:fixed; top:0; left:0; width:8px; height:8px; border-radius:2px;
+  background:var(--chrome); border:1.5px solid transparent;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.7), 0 0 5px rgba(154,166,184,.45);
   pointer-events:none; z-index:300; transform:translate(-50%,-50%); opacity:0;
-  transition:opacity .3s var(--ease), width .35s var(--ease), height .35s var(--ease),
-    border-radius .35s var(--ease), background .35s var(--ease),
-    border-color .35s var(--ease), box-shadow .35s var(--ease); }
-.cursor-dot.is-hover{ width:38px; height:38px; border-radius:9px;
-  background:transparent; border-color:rgba(154,166,184,.85);
-  box-shadow:0 0 10px rgba(154,166,184,.35), inset 0 0 6px rgba(255,255,255,.12); }
+  transition:opacity .3s var(--ease), width .4s var(--ease), height .4s var(--ease),
+    background .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease); }
+/* hover: the same square grows + hollows into a clean outline (sharp corners kept) */
+.cursor-dot.is-hover{ width:34px; height:34px; border-radius:3px;
+  background:transparent; border-color:rgba(154,166,184,.9);
+  box-shadow:0 0 0 1px rgba(255,255,255,.04), 0 0 10px rgba(154,166,184,.3); }
 
 /* =====================================================================
    Responsive
