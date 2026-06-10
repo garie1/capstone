@@ -41,6 +41,33 @@
     });
   }
 
+  /* ---------- Expertise tabs (Software | Data | Cloud) ---------- */
+  const xpTabs = $$('.xp__tab');
+  if (xpTabs.length) {
+    const xpPanes = $$('.xp__pane');
+    const activate = (tab) => {
+      xpTabs.forEach((t) => {
+        const on = t === tab;
+        t.classList.toggle('is-active', on);
+        t.setAttribute('aria-selected', String(on));
+      });
+      xpPanes.forEach((p) => p.classList.toggle('is-active', p.id === tab.getAttribute('aria-controls')));
+    };
+    xpTabs.forEach((t) => t.addEventListener('click', () => activate(t)));
+    // legacy anchors (#custom-software, #data-analytics, #cloud) open the matching tab
+    const byHash = () => {
+      const h = location.hash.replace('#', '');
+      if (!h) return;
+      const pane = xpPanes.find((p) => p.dataset.anchor === h || p.id === h);
+      if (pane) {
+        const tab = xpTabs.find((t) => t.getAttribute('aria-controls') === pane.id);
+        if (tab) activate(tab);
+      }
+    };
+    byHash();
+    window.addEventListener('hashchange', byHash);
+  }
+
   /* ---------- Scroll reveals ---------- */
   const reveals = $$('[data-reveal]');
   if ('IntersectionObserver' in window && !reduce) {

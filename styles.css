@@ -447,6 +447,65 @@ em{ font-style:normal; color:var(--blue); }
 .pagehero--compact .crumbs span{ color:var(--blue); }
 
 /* =====================================================================
+   ✦ Expertise — single tabbed panel (pill tabs over an image card)
+   ===================================================================== */
+.sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
+  clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+
+.xp{ max-width:var(--maxw); margin:0 auto;
+  padding:calc(var(--nav-h) + 1.25rem) var(--pad) clamp(1rem,2vw,1.5rem); }
+.xp__panel{ position:relative; overflow:hidden; border-radius:24px; color:#fff;
+  min-height:min(80vh,740px); display:flex; flex-direction:column;
+  padding:clamp(1.5rem,3vw,2.5rem); }
+.xp__panel::before{ content:""; position:absolute; inset:0; z-index:0;
+  background:
+    linear-gradient(180deg, rgba(7,13,31,.55) 0%, rgba(7,13,31,.35) 35%, rgba(7,13,31,.72) 100%),
+    var(--xp-img) center / cover no-repeat; }
+
+/* pill tab switcher (reference style) */
+.xp__tabs{ position:relative; z-index:1; align-self:center; display:inline-flex; gap:.3rem;
+  padding:.3rem; border-radius:50px;
+  background:rgba(7,13,31,.4); border:1px solid rgba(255,255,255,.14);
+  -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px); }
+.xp__tab{ border:0; background:transparent; cursor:pointer;
+  font-family:var(--sans); font-weight:600; font-size:.92rem; color:rgba(255,255,255,.72);
+  padding:.6rem 1.4rem; border-radius:50px; transition:color .3s var(--ease), background .35s var(--ease); }
+.xp__tab:hover{ color:#fff; }
+.xp__tab.is-active{ background:#fff; color:var(--ink); }
+
+/* swapping content */
+.xp__body{ position:relative; z-index:1; margin:auto 0; max-width:46rem; }
+.xp__pane{ display:none; }
+.xp__pane.is-active{ display:block; animation:xpIn .55s var(--ease); }
+@keyframes xpIn{ from{ opacity:0; transform:translateY(12px); } to{ opacity:1; transform:none; } }
+.xp__kicker{ font-size:.78rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase;
+  color:#9DB4FF; margin-bottom:1rem; }
+.xp__title{ font-family:var(--display); font-weight:300; letter-spacing:-0.025em; line-height:1.06;
+  font-size:clamp(2rem,4.4vw,3.4rem); color:#fff; }
+.xp__title em{ color:rgba(214,221,232,.75); }
+.xp__lead{ color:rgba(255,255,255,.82); font-size:1.02rem; line-height:1.6; max-width:38rem; margin-top:1.1rem; }
+.xp__list{ margin-top:1.6rem; display:grid; grid-template-columns:1fr 1fr; gap:.6rem 2rem; }
+.xp__list li{ position:relative; padding-left:1.3rem; font-size:.95rem; color:rgba(255,255,255,.88); }
+.xp__list li::before{ content:""; position:absolute; left:0; top:.5em; width:7px; height:7px;
+  border-radius:1.5px; background:var(--chrome); transform:rotate(45deg); }
+.xp__foot{ position:relative; z-index:1; font-size:.78rem; letter-spacing:.1em; text-transform:uppercase;
+  color:rgba(255,255,255,.55); }
+
+/* slim one-line CTA */
+.xp-cta{ max-width:var(--maxw); margin:0 auto;
+  padding:clamp(1.5rem,3vw,2.5rem) var(--pad) clamp(2rem,4vw,3rem);
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1.2rem; }
+.xp-cta__text{ color:var(--ink-soft); font-size:1.02rem; max-width:34rem; }
+
+@media (max-width:680px){
+  .xp__panel{ min-height:auto; }
+  .xp__tabs{ align-self:stretch; justify-content:center; }
+  .xp__tab{ flex:1; padding:.6rem .5rem; text-align:center; }
+  .xp__body{ margin:2rem 0; }
+  .xp__list{ grid-template-columns:1fr; }
+}
+
+/* =====================================================================
    ✦ Trust strip — compact, dark gradient, light reverse text.
    Desktop: fixed label (left) + industries marquee (right) that scroll left
    and dissolve into the label area via a left-edge fade mask.

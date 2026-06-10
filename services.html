@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services — Capstone Technologies</title>
-  <meta name="description" content="Custom software development, data & analytics, and cloud services — designed, built, and sustained by one senior team." />
+  <title>Expertise — Capstone Technologies</title>
+  <meta name="description" content="Custom software, data & analytics, and cloud — one senior team that owns the whole stack." />
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
   <link href="https://api.fontshare.com/v2/css?f[]=general-sans@200,300,400,500,600,700&f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body data-page="services">
 
-  <header class="nav nav--over-hero" id="nav">
+  <header class="nav" id="nav">
     <div class="nav__inner">
       <a href="index.html" class="nav__brand" aria-label="Capstone Technologies home">
         <img src="capstone_logo_2.png" alt="Capstone Technologies" class="nav__logo nav__logo--light" />
@@ -20,9 +20,7 @@
       <nav class="nav__links" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="services.html#custom-software" aria-current="page">Software</a>
-        <a href="services.html#data-analytics">Data</a>
-        <a href="services.html#cloud">Cloud</a>
+        <a href="services.html" aria-current="page">Expertise</a>
         <a href="insights.html">Insights</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -32,11 +30,9 @@
       <nav class="nav__mobile-links" aria-label="Mobile">
         <a href="index.html"><span class="nav__mobile-no">01</span>Home</a>
         <a href="about.html"><span class="nav__mobile-no">02</span>About</a>
-        <a href="services.html#custom-software"><span class="nav__mobile-no">03</span>Software</a>
-        <a href="services.html#data-analytics"><span class="nav__mobile-no">04</span>Data</a>
-        <a href="services.html#cloud"><span class="nav__mobile-no">05</span>Cloud</a>
-        <a href="insights.html"><span class="nav__mobile-no">06</span>Insights</a>
-        <a href="contact.html"><span class="nav__mobile-no">07</span>Contact</a>
+        <a href="services.html" aria-current="page"><span class="nav__mobile-no">03</span>Expertise</a>
+        <a href="insights.html"><span class="nav__mobile-no">04</span>Insights</a>
+        <a href="contact.html"><span class="nav__mobile-no">05</span>Contact</a>
       </nav>
       <div class="nav__mobile-foot">
         <a href="contact.html" class="btn btn--orbit magnetic" aria-label="Start a project">
@@ -52,147 +48,83 @@
   </header>
 
   <main>
-    <!-- Page hero -->
-    <section class="pagehero pagehero--img" style="--hero-img:url('services.jpg')">
-      <div class="grid-lines" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-      <div class="dotfield dotfield--fade-radial pagehero__dots" data-reveal aria-hidden="true"></div>
-      <div class="wrap pagehero__inner">
-        <h1 class="pagehero__title reveal" data-reveal>Three disciplines, <em>one team.</em></h1>
-        <p class="pagehero__lead reveal" data-reveal data-reveal-delay="120">
-          Software, data, and cloud are usually sold by three different vendors. We do all
-          three under one roof &mdash; so nothing falls through the gaps between them.
-        </p>
+    <h1 class="sr-only">Expertise — Custom Software, Data &amp; Analytics, Cloud Services</h1>
+
+    <!-- ✦ Expertise — single tabbed panel (Software | Data | Cloud) -->
+    <section class="xp">
+      <div class="xp__panel" style="--xp-img:url('services.jpg')">
+
+        <div class="xp__tabs" role="tablist" aria-label="Expertise areas">
+          <button class="xp__tab is-active" role="tab" aria-selected="true" aria-controls="xp-software" id="tab-software">Software</button>
+          <button class="xp__tab" role="tab" aria-selected="false" aria-controls="xp-data" id="tab-data">Data</button>
+          <button class="xp__tab" role="tab" aria-selected="false" aria-controls="xp-cloud" id="tab-cloud">Cloud</button>
+        </div>
+
+        <div class="xp__body">
+          <article class="xp__pane is-active" id="xp-software" role="tabpanel" aria-labelledby="tab-software" data-anchor="custom-software">
+            <p class="xp__kicker">01 &middot; Custom Software Development</p>
+            <h2 class="xp__title">Bespoke systems, <em>built to fit.</em></h2>
+            <p class="xp__lead">Off-the-shelf software forces your process to bend around the tool. We do the
+              opposite &mdash; engineering applications around how you actually work, integrated cleanly with
+              everything you already run. The people who design it are the people who build it.</p>
+            <ul class="xp__list">
+              <li>Product &amp; application engineering</li>
+              <li>System &amp; API integration</li>
+              <li>Legacy modernisation</li>
+              <li>Workflow automation</li>
+              <li>Technical due diligence</li>
+              <li>Long-term maintenance</li>
+            </ul>
+          </article>
+
+          <article class="xp__pane" id="xp-data" role="tabpanel" aria-labelledby="tab-data" data-anchor="data-analytics">
+            <p class="xp__kicker">02 &middot; Data &amp; Analytics</p>
+            <h2 class="xp__title">Decisions, <em>backed by evidence.</em></h2>
+            <p class="xp__lead">Your data is already telling you what to do next &mdash; if you can see it.
+              We build the pipelines, warehouses, and dashboards that turn scattered records into real-time
+              intelligence, delivered at the scale your business runs at.</p>
+            <ul class="xp__list">
+              <li>Data pipelines &amp; ETL</li>
+              <li>Cloud data warehousing</li>
+              <li>Real-time dashboards</li>
+              <li>Reporting &amp; BI</li>
+              <li>Data governance</li>
+              <li>Predictive analytics</li>
+            </ul>
+          </article>
+
+          <article class="xp__pane" id="xp-cloud" role="tabpanel" aria-labelledby="tab-cloud" data-anchor="cloud">
+            <p class="xp__kicker">03 &middot; Cloud Services</p>
+            <h2 class="xp__title">Infrastructure <em>that stays up.</em></h2>
+            <p class="xp__lead">The best infrastructure is the kind you never have to think about. Secure,
+              automated cloud &mdash; storage, analytics, and security &mdash; architected to scale quietly
+              in the background while you grow. Hardened by default, monitored around the clock.</p>
+            <ul class="xp__list">
+              <li>Cloud security</li>
+              <li>Managed &amp; automated storage</li>
+              <li>Cloud analytics</li>
+              <li>Auto-scaling architecture</li>
+              <li>Migration &amp; modernisation</li>
+              <li>Backup &amp; disaster recovery</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="xp__foot">Three disciplines &middot; one team that owns the whole stack</p>
       </div>
     </section>
 
-    <!-- Service details -->
-    <section class="section">
-      <article class="svc-detail reveal" data-reveal id="custom-software">
-        <div>
-          <span class="svc-detail__no">01</span>
-          <span class="svc-detail__icon" aria-hidden="true">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter">
-              <rect x="4" y="6" width="24" height="20" rx="1.5"/><path d="M4 11h24"/>
-              <path d="M13 16l-3 3 3 3"/><path d="M19 16l3 3-3 3"/>
-            </svg>
-          </span>
-        </div>
-        <div>
-          <h2>Custom Software Development</h2>
-          <p class="svc-detail__lead">Bespoke systems, built to fit how your business actually works.</p>
-          <p>Off-the-shelf software forces your process to bend around the tool. We do the
-            opposite &mdash; engineering applications around your operations, then integrating
-            them cleanly with the systems you already depend on. Senior engineers own the
-            work end to end, so the people who design it are the people who build it.</p>
-          <ul class="svc-list">
-            <li>Product &amp; application engineering</li>
-            <li>System &amp; API integration</li>
-            <li>Legacy modernisation</li>
-            <li>Workflow automation</li>
-            <li>Technical due diligence</li>
-            <li>Long-term maintenance</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="svc-detail reveal" data-reveal id="data-analytics">
-        <div>
-          <span class="svc-detail__no">02</span>
-          <span class="svc-detail__icon" aria-hidden="true">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter">
-              <path d="M5 27V5"/><path d="M5 27h22"/>
-              <rect x="9" y="17" width="4" height="6"/><rect x="16" y="12" width="4" height="11"/><rect x="23" y="8" width="4" height="15"/>
-              <path d="M9 13l7-5 7-3" stroke-dasharray="2 2.5"/>
-            </svg>
-          </span>
-        </div>
-        <div>
-          <h2>Data &amp; Analytics</h2>
-          <p class="svc-detail__lead">Decisions, backed by evidence rather than instinct.</p>
-          <p>Your data is already telling you what to do next &mdash; if you can see it. We
-            build the pipelines, warehouses, and dashboards that turn scattered records into
-            real-time intelligence, delivered at the scale your business runs at. Pervasive,
-            governed, and built to be trusted.</p>
-          <ul class="svc-list">
-            <li>Data pipelines &amp; ETL</li>
-            <li>Cloud data warehousing</li>
-            <li>Real-time dashboards</li>
-            <li>Reporting &amp; BI</li>
-            <li>Data governance</li>
-            <li>Predictive analytics</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="svc-detail reveal" data-reveal id="cloud">
-        <div>
-          <span class="svc-detail__no">03</span>
-          <span class="svc-detail__icon" aria-hidden="true">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter">
-              <path d="M9 24a6 6 0 0 1-.5-12 8 8 0 0 1 15.3 2.2A5 5 0 0 1 23 24z"/><rect x="13" y="15" width="6" height="6"/>
-            </svg>
-          </span>
-        </div>
-        <div>
-          <h2>Cloud Services</h2>
-          <p class="svc-detail__lead">Infrastructure that stays up &mdash; and stays out of your way.</p>
-          <p>The best infrastructure is the kind you never have to think about. We architect
-            secure, automated cloud environments &mdash; storage, analytics, and security &mdash;
-            that scale quietly in the background while you grow. Automated backup, hardened
-            by default, monitored around the clock.</p>
-          <ul class="svc-list">
-            <li>Cloud security</li>
-            <li>Managed &amp; automated storage</li>
-            <li>Cloud analytics</li>
-            <li>Auto-scaling architecture</li>
-            <li>Migration &amp; modernisation</li>
-            <li>Backup &amp; disaster recovery</li>
-          </ul>
-        </div>
-      </article>
-    </section>
-
-    <!-- Approach -->
-    <section class="approach">
-      <div class="approach__head">
-        <p class="section-tag reveal" data-reveal><span>04</span> How we work</p>
-        <h2 class="section-title reveal" data-reveal>The same four steps, <span class="muted">every engagement.</span></h2>
-      </div>
-      <ol class="steps">
-        <li class="step reveal" data-reveal><span class="step__no">01</span><h3>Understand</h3><p>We start with your business, not our stack. Constraints first, code later.</p></li>
-        <li class="step reveal" data-reveal data-reveal-delay="90"><span class="step__no">02</span><h3>Architect</h3><p>We map the system end to end before we write a line &mdash; so it scales.</p></li>
-        <li class="step reveal" data-reveal data-reveal-delay="180"><span class="step__no">03</span><h3>Build</h3><p>Senior engineers, short feedback loops, working software in your hands early.</p></li>
-        <li class="step reveal" data-reveal data-reveal-delay="270"><span class="step__no">04</span><h3>Sustain</h3><p>We stay close after launch &mdash; monitoring, hardening, and iterating.</p></li>
-      </ol>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta" style="--cta-img:url('action.jpg')">
-      <div class="cta__media">
-        <h2 class="cta__title reveal" data-reveal>Not sure which<br />you need?</h2>
-      </div>
-      <div class="cta__inner">
-        <p class="cta__lead reveal" data-reveal data-reveal-delay="100">Most projects touch all three. Tell us the problem and we&rsquo;ll map the rest.</p>
-        <div class="cta__actions reveal" data-reveal data-reveal-delay="180">
-          <a href="contact.html" class="btn btn--orbit magnetic" aria-label="Start a project"><span class="cta-orbit__label">Start a project</span><span class="cta-orbit__icon" aria-hidden="true"><span class="cta-orbit__ring"></span><svg class="cta-orbit__arrow" viewBox="0 0 28 28" width="28" height="28"><g fill="currentColor"><circle cx="11" cy="9" r="1.4"/><circle cx="15" cy="11.5" r="1.4"/><circle cx="18" cy="14" r="1.4"/><circle cx="15" cy="16.5" r="1.4"/><circle cx="11" cy="19" r="1.4"/></g></svg></span></a>
-          <a href="about.html" class="link-cta">Meet the team <span class="btn__arrow">&rarr;</span></a>
-        </div>
-        
-        <div class="cta__contact">
-          <a class="cta__c-item" href="mailto:hello@capstonetech.net">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg>
-            <span>hello@capstonetech.net</span>
-          </a>
-          <span class="cta__c-item cta__c-item--static">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 0 0-14 0c0 5.5 7 11 7 11z"/><rect x="9.5" y="7.5" width="5" height="5"/></svg>
-            <span>Unit 702, 7/F, Railway Plaza, TST, Kowloon</span>
-          </span>
-        </div>
-      </div>
+    <!-- Slim CTA -->
+    <section class="xp-cta">
+      <p class="xp-cta__text">Most projects touch all three. Tell us the problem &mdash; we&rsquo;ll map the rest.</p>
+      <a href="contact.html" class="btn btn--orbit magnetic" aria-label="Start a project">
+        <span class="cta-orbit__label">Start a project</span>
+        <span class="cta-orbit__icon" aria-hidden="true"><span class="cta-orbit__ring"></span><svg class="cta-orbit__arrow" viewBox="0 0 28 28" width="28" height="28"><g fill="currentColor"><circle cx="11" cy="9" r="1.4"/><circle cx="15" cy="11.5" r="1.4"/><circle cx="18" cy="14" r="1.4"/><circle cx="15" cy="16.5" r="1.4"/><circle cx="11" cy="19" r="1.4"/></g></svg></span>
+      </a>
     </section>
   </main>
 
-    <footer class="footer footer--slim">
+  <footer class="footer footer--slim">
     <div class="footer__base">
       <span>&copy; 2026 Capstone Technologies</span>
       <span class="footer__tag">Hong Kong&#8209;built, globally&#8209;deployed.</span>
