@@ -34,8 +34,14 @@
       navMobile.setAttribute('aria-hidden', String(!isOpen));
       document.body.style.overflow = isOpen ? 'hidden' : '';   // scroll lock
     };
+    const navClose = $('#navClose');
     burger.addEventListener('click', () => toggle());
+    if (navClose) navClose.addEventListener('click', () => toggle(false));
     $$('#navMobile a').forEach((a) => a.addEventListener('click', () => toggle(false)));
+    // click on the empty backdrop (not on the inner content) closes the menu
+    navMobile.addEventListener('click', (e) => {
+      if (e.target === navMobile) toggle(false);
+    });
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && navMobile.classList.contains('is-open')) toggle(false);
     });
