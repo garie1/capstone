@@ -45,6 +45,7 @@
   const xpTabs = $$('.xp__tab');
   if (xpTabs.length) {
     const xpPanes = $$('.xp__pane');
+    const xpPanel = document.querySelector('.xp__panel');
     const activate = (tab) => {
       xpTabs.forEach((t) => {
         const on = t === tab;
@@ -52,6 +53,7 @@
         t.setAttribute('aria-selected', String(on));
       });
       xpPanes.forEach((p) => p.classList.toggle('is-active', p.id === tab.getAttribute('aria-controls')));
+      if (xpPanel && tab.dataset.img) xpPanel.style.setProperty('--xp-img', `url('${tab.dataset.img}')`);
     };
     xpTabs.forEach((t) => t.addEventListener('click', () => activate(t)));
     // legacy anchors (#custom-software, #data-analytics, #cloud) open the matching tab

@@ -32,7 +32,15 @@
       "Bash(grep -n '^      </div>$' index.html)",
       "Bash(grep -n -B1 '^    </section>$' index.html)",
       "Bash(python3 -c ' *)",
-      "Bash(git mv *)"
+      "Bash(git mv *)",
+      "Bash(grep -rl 'class=\"approach\"' *.html)",
+      "Bash(grep -rl 'record-bar' *.html)",
+      "Bash(grep -rl 'class=\"intro-split' *.html)",
+      "Bash(perl -0pi -e 's{\\\\n\\\\s*<p class=\"card__cat\">Service / 0[123]</p>}{}g' index.html)",
+      "Bash(awk '/<section class=\"cta\"/{p=1} p{print} /<\\\\/section>/{if\\(p\\){exit}}' index.html)",
+      "Bash(awk '/<section class=\"cta\"/{p=1} p{print} p&&/<\\\\/section>/{exit}' index.html)",
+      "Bash(perl -0pi -e 's{[ \\\\t]+\\(<section class=\"cta\">\\)}{    $1}g' index.html about.html insights.html article-1.html article-2.html article-3.html article-4.html)",
+      "Bash(awk '/intro2__statement/,/<\\\\/dl>/' index.html)"
     ]
   }
 }

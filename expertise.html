@@ -11,7 +11,8 @@
 </head>
 <body data-page="services">
 
-  <header class="nav" id="nav">
+  <!-- Navigation (over hero) -->
+  <header class="nav nav--over-hero" id="nav"> 
     <div class="nav__inner">
       <a href="index.html" class="nav__brand" aria-label="Capstone Technologies home">
         <img src="capstone_logo_2.png" alt="Capstone Technologies" class="nav__logo nav__logo--light" />
@@ -52,84 +53,91 @@
 
     <!-- ✦ Expertise — single tabbed panel (Software | Data | Cloud) -->
     <section class="xp">
-      <div class="xp__panel" style="--xp-img:url('expertise.jpg')">
+      <div class="xp__panel" style="--xp-img:url('expertise-software.jpg')">
 
         <div class="xp__tabs" role="tablist" aria-label="Expertise areas">
-          <button class="xp__tab is-active" role="tab" aria-selected="true" aria-controls="xp-software" id="tab-software">Software</button>
-          <button class="xp__tab" role="tab" aria-selected="false" aria-controls="xp-data" id="tab-data">Data</button>
-          <button class="xp__tab" role="tab" aria-selected="false" aria-controls="xp-cloud" id="tab-cloud">Cloud</button>
+          <button class="xp__tab is-active" role="tab" aria-selected="true" aria-controls="xp-software" id="tab-software" data-img="expertise-software.jpg">Software</button>
+          <button class="xp__tab" role="tab" aria-selected="false" aria-controls="xp-data" id="tab-data" data-img="expertise-data.jpg">Data</button>
+          <button class="xp__tab" role="tab" aria-selected="false" aria-controls="xp-cloud" id="tab-cloud" data-img="expertise-cloud.jpg">Cloud</button>
         </div>
 
         <div class="xp__body">
           <article class="xp__pane is-active" id="xp-software" role="tabpanel" aria-labelledby="tab-software" data-anchor="custom-software">
-            <p class="xp__kicker">01 &middot; Custom Software Development</p>
-            <h2 class="xp__title">Bespoke systems, <em>built to fit.</em></h2>
-            <p class="xp__lead">Off-the-shelf software forces your process to bend around the tool. We do the
-              opposite &mdash; engineering applications around how you actually work, integrated cleanly with
-              everything you already run. The people who design it are the people who build it.</p>
-            <ul class="xp__list">
-              <li>Product &amp; application engineering</li>
-              <li>System &amp; API integration</li>
-              <li>Legacy modernisation</li>
-              <li>Workflow automation</li>
-              <li>Technical due diligence</li>
-              <li>Long-term maintenance</li>
-            </ul>
+            <div class="xp__crosshair"><div class="xp__crosshair-node"></div></div>
+            <div class="xp__content-wrap">
+              <p class="xp__kicker">01 &middot; Custom Software Development</p>
+              <h2 class="xp__title">Bespoke systems, <em>built to fit.</em></h2>
+              <p class="xp__lead">Off-the-shelf software forces your process to bend around the tool. We do the
+                opposite &mdash; engineering applications around how you actually work, integrated cleanly with
+                everything you already run. The people who design it are the people who build it.</p>
+              <ul class="xp__list">
+                <li>Product &amp; application engineering</li>
+                <li>System &amp; API integration</li>
+                <li>Legacy modernisation</li>
+                <li>Workflow automation</li>
+                <li>Technical due diligence</li>
+                <li>Long-term maintenance</li>
+              </ul>
+            </div>
           </article>
 
           <article class="xp__pane" id="xp-data" role="tabpanel" aria-labelledby="tab-data" data-anchor="data-analytics">
-            <p class="xp__kicker">02 &middot; Data &amp; Analytics</p>
-            <h2 class="xp__title">Decisions, <em>backed by evidence.</em></h2>
-            <p class="xp__lead">Your data is already telling you what to do next &mdash; if you can see it.
-              We build the pipelines, warehouses, and dashboards that turn scattered records into real-time
-              intelligence, delivered at the scale your business runs at.</p>
-            <ul class="xp__list">
-              <li>Data pipelines &amp; ETL</li>
-              <li>Cloud data warehousing</li>
-              <li>Real-time dashboards</li>
-              <li>Reporting &amp; BI</li>
-              <li>Data governance</li>
-              <li>Predictive analytics</li>
-            </ul>
+            <div class="xp__crosshair"><div class="xp__crosshair-node"></div></div>
+            <div class="xp__content-wrap">
+              <p class="xp__kicker">02 &middot; Data &amp; Analytics</p>
+              <h2 class="xp__title">Decisions, <em>backed by evidence.</em></h2>
+              <p class="xp__lead">Your data is already telling you what to do next &mdash; if you can see it.
+                We build the pipelines, warehouses, and dashboards that turn scattered records into real-time
+                intelligence, delivered at the scale your business runs at.</p>
+              <ul class="xp__list">
+                <li>Data pipelines &amp; ETL</li>
+                <li>Cloud data warehousing</li>
+                <li>Real-time dashboards</li>
+                <li>Reporting &amp; BI</li>
+                <li>Data governance</li>
+                <li>Predictive analytics</li>
+              </ul>
+            </div>
           </article>
 
           <article class="xp__pane" id="xp-cloud" role="tabpanel" aria-labelledby="tab-cloud" data-anchor="cloud">
-            <p class="xp__kicker">03 &middot; Cloud Services</p>
-            <h2 class="xp__title">Infrastructure <em>that stays up.</em></h2>
-            <p class="xp__lead">The best infrastructure is the kind you never have to think about. Secure,
-              automated cloud &mdash; storage, analytics, and security &mdash; architected to scale quietly
-              in the background while you grow. Hardened by default, monitored around the clock.</p>
-            <ul class="xp__list">
-              <li>Cloud security</li>
-              <li>Managed &amp; automated storage</li>
-              <li>Cloud analytics</li>
-              <li>Auto-scaling architecture</li>
-              <li>Migration &amp; modernisation</li>
-              <li>Backup &amp; disaster recovery</li>
-            </ul>
+            <div class="xp__crosshair"><div class="xp__crosshair-node"></div></div>
+            <div class="xp__content-wrap">
+              <p class="xp__kicker">03 &middot; Cloud Services</p>
+              <h2 class="xp__title">Infrastructure <em>that stays up.</em></h2>
+              <p class="xp__lead">The best infrastructure is the kind you never have to think about. Secure,
+                automated cloud &mdash; storage, analytics, and security &mdash; architected to scale quietly
+                in the background while you grow. Hardened by default, monitored around the clock.</p>
+              <ul class="xp__list">
+                <li>Cloud security</li>
+                <li>Managed &amp; automated storage</li>
+                <li>Cloud analytics</li>
+                <li>Auto-scaling architecture</li>
+                <li>Migration &amp; modernisation</li>
+                <li>Backup &amp; disaster recovery</li>
+              </ul>
+            </div>
           </article>
         </div>
 
-        <p class="xp__foot">Three disciplines &middot; one team that owns the whole stack</p>
+        <!-- Slim CTA -->
+        <section class="xp-cta">
+          <p class="xp-cta__text">Three disciplines &middot; one team. Bring us your vision &mdash; we&rsquo;ll engineer the rest.</p>
+          <a href="contact.html" class="btn btn--silver btn--orbit magnetic" aria-label="Start a project">
+            <span class="cta-orbit__label">Start a project</span>
+            <span class="cta-orbit__icon" aria-hidden="true"><span class="cta-orbit__ring"></span><svg class="cta-orbit__arrow" viewBox="0 0 28 28" width="28" height="28"><g fill="currentColor"><circle cx="11" cy="9" r="1.4"/><circle cx="15" cy="11.5" r="1.4"/><circle cx="18" cy="14" r="1.4"/><circle cx="15" cy="16.5" r="1.4"/><circle cx="11" cy="19" r="1.4"/></g></svg></span>
+          </a>
+        </section>
+
+        <footer class="footer footer--slim">
+          <div class="footer__base">
+            <span>&copy; 2026 Capstone Technologies</span>
+            <span class="footer__tag">Hong Kong&#8209;built, globally&#8209;deployed.</span>
+          </div>
+        </footer>
       </div>
     </section>
-
-    <!-- Slim CTA -->
-    <section class="xp-cta">
-      <p class="xp-cta__text">Most projects touch all three. Tell us the problem &mdash; we&rsquo;ll map the rest.</p>
-      <a href="contact.html" class="btn btn--orbit magnetic" aria-label="Start a project">
-        <span class="cta-orbit__label">Start a project</span>
-        <span class="cta-orbit__icon" aria-hidden="true"><span class="cta-orbit__ring"></span><svg class="cta-orbit__arrow" viewBox="0 0 28 28" width="28" height="28"><g fill="currentColor"><circle cx="11" cy="9" r="1.4"/><circle cx="15" cy="11.5" r="1.4"/><circle cx="18" cy="14" r="1.4"/><circle cx="15" cy="16.5" r="1.4"/><circle cx="11" cy="19" r="1.4"/></g></svg></span>
-      </a>
-    </section>
   </main>
-
-  <footer class="footer footer--slim">
-    <div class="footer__base">
-      <span>&copy; 2026 Capstone Technologies</span>
-      <span class="footer__tag">Hong Kong&#8209;built, globally&#8209;deployed.</span>
-    </div>
-  </footer>
 
   <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
   <script src="script.js"></script>
