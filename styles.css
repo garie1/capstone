@@ -445,6 +445,22 @@ em{ font-style:normal; color:var(--blue); }
 .crumbs a:hover{ color:#fff; }
 .crumbs span{ color:#9DB4FF; }
 
+/* ✦ Crosshair + "capstone" node motif (borrowed from the Expertise panel).
+   Thin lines cross at a glowing node; a radial gradient washes from that node
+   into the bottom-right quadrant — framing the headline and keeping it legible. */
+.pagehero__crosshair{ position:absolute; top:0; left:0; width:0; height:0; pointer-events:none; }
+.pagehero__crosshair::before,
+.pagehero__crosshair::after{ content:""; position:absolute; background:rgba(255,255,255,.25); }
+.pagehero__crosshair::before{ top:0; left:-100vw; right:-100vw; height:1px; }
+.pagehero__crosshair::after{ left:0; top:-100vh; bottom:-100vh; width:1px; }
+.pagehero__crosshair-node{ position:absolute; top:-2.5px; left:-2.5px; width:6px; height:6px;
+  background:#fff; z-index:2; box-shadow:0 0 8px rgba(255,255,255,.8); }
+.pagehero__content-wrap{ position:relative; display:inline-block; max-width:46rem;
+  padding:clamp(1.3rem,3.2vw,2.1rem) clamp(2.2rem,6vw,4rem) clamp(1.8rem,4.5vw,3rem) clamp(1.3rem,3.2vw,2.1rem);
+  background:radial-gradient(115% 115% at 0% 0%, rgba(7,13,31,.82) 0%, rgba(7,13,31,.34) 48%, transparent 82%); }
+.pagehero__content-wrap .pagehero__title{ margin-top:0; }
+.pagehero__content-wrap .pagehero__lead{ margin-bottom:0; }
+
 /* compact light page hero (no image) — short, so content below shows immediately */
 .pagehero--compact{ min-height:auto; display:block; background:var(--grad-mist); color:var(--ink);
   padding:calc(var(--nav-h) + clamp(2rem,5vw,3.5rem)) 0 clamp(1.8rem,4vw,2.8rem);
