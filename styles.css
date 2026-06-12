@@ -245,9 +245,9 @@ em{ font-style:normal; color:var(--blue); }
   border-bottom:1px solid rgba(255,255,255,.45);
   border-bottom-left-radius:26px; border-bottom-right-radius:26px;
   box-shadow:0 26px 50px -14px rgba(11,21,48,.30), 0 1px 0 rgba(255,255,255,.5) inset;
-  opacity:0; transform:translateY(-12px);
-  transition:opacity .4s var(--ease), transform .5s var(--ease); }
-.nav__mobile.is-open .nav__mobile-inner{ opacity:1; transform:none; }
+  opacity:0;
+  transition:opacity .4s var(--ease); }
+.nav__mobile.is-open .nav__mobile-inner{ opacity:1; }
 
 /* top bar: logo + close (sits in its own row — never cropped) */
 .nav__mobile-head{ display:flex; align-items:center; justify-content:space-between;
