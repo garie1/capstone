@@ -29,6 +29,7 @@
     const toggle = (open) => {
       const isOpen = open ?? !navMobile.classList.contains('is-open');
       navMobile.classList.toggle('is-open', isOpen);
+      nav.classList.toggle('is-mobile-open', isOpen);
       burger.setAttribute('aria-expanded', String(isOpen));
       burger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
       navMobile.setAttribute('aria-hidden', String(!isOpen));

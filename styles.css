@@ -286,6 +286,8 @@ em{ font-style:normal; color:var(--blue); }
 
 /* keep the burger as the open trigger; it sits beneath the overlay once open */
 .nav__burger[aria-expanded="true"]{ position:relative; z-index:95; }
+.nav.is-mobile-open .nav__logo--light{ display:none !important; }
+.nav.is-mobile-open .nav__logo--dark{ display:block !important; }
 
 /* =====================================================================
    Grid lines (depth)
@@ -1163,9 +1165,7 @@ a.footer__item:hover .footer__ico{ color:var(--blue); }
 @media (max-width:1024px){
   .hero__inner{ grid-template-columns:1fr; gap:1.8rem; align-items:start; }
   .hero__aside-col{ max-width:34rem; }
-  .hero__rule{ top:calc(var(--nav-h) + 2rem); }
-  .hero__rule-label--l{ top:-1.4rem; }
-  .hero__rule-label--r{ top:0.8rem; left:0; right:auto; }
+  .hero__rule{ display:none; }
   .intro-split{ grid-template-columns:1fr; }
   .services__head{ grid-template-columns:1fr; align-items:start; }
   .about__grid{ grid-template-columns:1fr; }
@@ -1199,7 +1199,6 @@ a.footer__item:hover .footer__ico{ color:var(--blue); }
   .hero__meta div{ flex:1 1 0; min-width:0; flex-direction:column; align-items:flex-start; gap:.15rem; }
   .hero__meta dt{ font-size:clamp(1rem,4.6vw,1.3rem); }
   .hero__meta dd{ font-size:clamp(.56rem,2.4vw,.72rem); letter-spacing:.04em; line-height:1.25; }
-  .hero__rule{ display:block; }
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important;
