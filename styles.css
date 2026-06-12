@@ -1152,9 +1152,55 @@ a.split__row:hover{ color:#fff; }
 .cs__quote cite{ display:block; margin-top:1rem; font-family:var(--sans); font-style:normal;
   font-size:.85rem; font-weight:600; color:var(--ink-soft); }
 .cs__quote cite span{ color:var(--silver-deep); font-weight:400; }
+
+/* ✦ Outcome stats — big gradient figures with a hairline + accent tick */
+.stats__grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(1.4rem,3vw,2.4rem); }
+.stat{ position:relative; display:flex; flex-direction:column; gap:.45rem;
+  padding:1.1rem 1rem 0 0; border-top:2px solid var(--line); }
+.stat::before{ content:""; position:absolute; top:-2px; left:0; width:36px; height:2px;
+  background:linear-gradient(90deg,var(--blue),var(--silver)); }
+.stat__num{ font-family:var(--display); font-weight:500; font-size:clamp(2.1rem,3.8vw,3.2rem);
+  line-height:1; letter-spacing:-0.03em;
+  background:var(--grad-accent); -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent; color:transparent; }
+.stat__label{ color:var(--ink-soft); font-size:.9rem; line-height:1.3; }
+
+/* ✦ Case-study data visualisations — comparison bars + trend graph */
+.cs-data{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.5rem,3.5vw,3rem); }
+.cs-fig{ display:flex; flex-direction:column; border:1px solid var(--line); border-radius:var(--radius);
+  padding:clamp(1.4rem,3vw,2rem); background:linear-gradient(180deg,var(--white),var(--paper)); }
+.cs-fig__head{ display:flex; flex-direction:column; gap:.25rem; margin-bottom:1.5rem; }
+.cs-fig__title{ font-weight:600; font-size:1.04rem; color:var(--ink); }
+.cs-fig__sub{ font-size:.74rem; letter-spacing:.1em; text-transform:uppercase; color:var(--silver-deep); }
+.cs-fig__foot{ margin-top:auto; padding-top:1.3rem; font-size:.86rem; color:var(--ink-soft); }
+.cs-fig__foot b{ color:var(--blue); font-weight:600; }
+
+/* horizontal before/after bars */
+.cs-bars{ display:flex; flex-direction:column; gap:1.2rem; }
+.cs-bar__top{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:.45rem; }
+.cs-bar__name{ font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); }
+.cs-bar__val{ font-family:var(--display); font-weight:600; font-size:1.35rem; letter-spacing:-0.02em; color:var(--ink); }
+.cs-bar__track{ height:12px; border-radius:6px; background:var(--sky); overflow:hidden; }
+.cs-bar__fill{ display:block; height:100%; width:0; border-radius:6px;
+  background:var(--grad-blue); transition:width 1.1s var(--ease); }
+.cs-bar__fill--muted{ background:linear-gradient(90deg,var(--silver-bright),var(--silver)); }
+.cs-bar.is-in .cs-bar__fill{ width:var(--w); }
+
+/* trend graph (svg) with a left-to-right wipe reveal */
+.cs-graph__svg{ width:100%; height:auto; display:block; overflow:visible; }
+.cs-graph__grid line{ stroke:var(--line); stroke-width:1; }
+.cs-graph__area{ fill:url(#csGrad); }
+.cs-graph__line{ fill:none; stroke:var(--blue); stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; }
+.cs-graph__dot{ fill:#fff; stroke:var(--blue); stroke-width:2; }
+.cs-graph__plot{ clip-path:inset(0 100% 0 0); transition:clip-path 1.3s var(--ease); }
+.cs-graph.is-in .cs-graph__plot{ clip-path:inset(0 0 0 0); }
+.cs-graph__x{ display:flex; justify-content:space-between; margin-top:.6rem;
+  font-size:.72rem; letter-spacing:.04em; color:var(--silver-deep); }
+
 @media (max-width:860px){
   .cs__grid{ grid-template-columns:1fr; }
   .cs__meta{ position:static; flex-direction:row; flex-wrap:wrap; gap:1.5rem 2.5rem; }
+  .cs-data{ grid-template-columns:1fr; }
 }
 
 /* =====================================================================
